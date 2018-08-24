@@ -13,13 +13,14 @@ export class GithubProfileComponent implements OnInit {
 
   ngOnInit() {  
      //this is if you navigate away from the component follower and then re load the component 
-     let id2 = this.route.snapshot.paramMap.get('id');
-      console.log(id2);
+     let parametrologin = this.route.snapshot.paramMap.get('segundoParametro');
+     //este parametro viene segun el html component de followers 
+     console.log(parametrologin);
 
       //this is when we stay on the same follower component but we switch only de id parameter
        this.route.paramMap
       .subscribe(params =>{
-         let id= +params.get('id');
+         let id= +params.get('primerParametro');
          console.log(id);
       });
   }
